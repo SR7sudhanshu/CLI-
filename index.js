@@ -3,15 +3,18 @@ const inquirer = require('inquirer').default;
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
+
 
 // Setup MySQL connection
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'db_username',
-  password: 'db_password',
-  database: 'db_name',
-  multipleStatements: true //  Needed for .sql files with multiple queries
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  multipleStatements: true
 });
+
 
 // Connect to MySQL
 connection.connect((err) => {
