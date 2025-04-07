@@ -7,9 +7,9 @@ const path = require('path');
 // Setup MySQL connection
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
-  password: 'Sr7123456@',
-  database: 'new',
+  user: 'db_username',
+  password: 'db_password',
+  database: 'db_name',
   multipleStatements: true //  Needed for .sql files with multiple queries
 });
 
